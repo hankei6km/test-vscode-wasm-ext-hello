@@ -21,6 +21,7 @@
   },
   "scripts": {
     "build": "npm run compile",
+    "build:rust": "cargo build --target wasm32-wasi --release && cp target/wasm32-wasi/release/rust-hello.wasm wasm/bin/hello.wasm",
     "compile": "node esbuild.config.mjs",
     "clean": "rimraf out/",
     "vscode:prepublish": "npm run clean && npm run build",
